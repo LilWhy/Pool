@@ -34,13 +34,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MainTabControl = new System.Windows.Forms.TabControl();
             this.Page1 = new System.Windows.Forms.TabPage();
             this.DataGridViewMain = new System.Windows.Forms.DataGridView();
-            this.ID_swimmer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.swimmersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.poolBDDataSetLocal = new Pool.PoolBDDataSetLocal();
+            this.Id_swimmer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name_swimmer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Surname_swimmer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Familyname_swimmer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date_of_birth_swimmer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category_swimmer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PagePanelListSwimmers = new System.Windows.Forms.Panel();
+            this.MainSearchLabel = new System.Windows.Forms.Label();
+            this.MainTextBoxSearch = new System.Windows.Forms.TextBox();
             this.CompetitionJoinButton = new System.Windows.Forms.Button();
             this.ChangeButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
@@ -57,32 +63,52 @@
             this.Distance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelCompetition = new System.Windows.Forms.Panel();
+            this.SaveToFile = new System.Windows.Forms.Button();
+            this.ClearButton = new System.Windows.Forms.Button();
             this.StyleLabel = new System.Windows.Forms.Label();
             this.DistanceLabel = new System.Windows.Forms.Label();
-            this.comboBoxDistance = new System.Windows.Forms.ComboBox();
-            this.comboBoxStyle = new System.Windows.Forms.ComboBox();
+            this.ComboBoxDistance = new System.Windows.Forms.ComboBox();
+            this.ComboBoxStyle = new System.Windows.Forms.ComboBox();
             this.StartButton = new System.Windows.Forms.Button();
-            this.swimmersTableAdapter = new Pool.PoolBDDataSetLocalTableAdapters.SwimmersTableAdapter();
-            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateofbirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.familynameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Page3 = new System.Windows.Forms.TabPage();
+            this.SearchPanel = new System.Windows.Forms.Panel();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.SearchFamilynameLabel = new System.Windows.Forms.Label();
+            this.SearchSurnameLabel = new System.Windows.Forms.Label();
+            this.SearchNameLabel = new System.Windows.Forms.Label();
+            this.SearchTextBoxFamilyname = new System.Windows.Forms.TextBox();
+            this.SearchTextBoxSurname = new System.Windows.Forms.TextBox();
+            this.SearchTextBoxName = new System.Windows.Forms.TextBox();
+            this.ResultDataGridView = new System.Windows.Forms.DataGridView();
+            this.NameResult = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SurnameResult = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FamilynameResult = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeResult = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DistanceResult = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StyleResult = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateResult = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.swimmersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.poolBDDataSet = new Pool.PoolBDDataSet();
+            this.swimmersTableAdapter = new Pool.PoolBDDataSetTableAdapters.SwimmersTableAdapter();
             this.MainTabControl.SuspendLayout();
             this.Page1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.swimmersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poolBDDataSetLocal)).BeginInit();
             this.PagePanelListSwimmers.SuspendLayout();
             this.Page2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CompetitionDataGridView)).BeginInit();
             this.PanelCompetition.SuspendLayout();
+            this.Page3.SuspendLayout();
+            this.SearchPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ResultDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.swimmersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poolBDDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // MainTabControl
             // 
             this.MainTabControl.Controls.Add(this.Page1);
             this.MainTabControl.Controls.Add(this.Page2);
+            this.MainTabControl.Controls.Add(this.Page3);
             this.MainTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTabControl.Font = new System.Drawing.Font("Times New Roman", 10F);
             this.MainTabControl.HotTrack = true;
@@ -118,19 +144,22 @@
             // DataGridViewMain
             // 
             this.DataGridViewMain.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.DataGridViewMain.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.DataGridViewMain.AutoGenerateColumns = false;
+            this.DataGridViewMain.BackgroundColor = System.Drawing.Color.White;
             this.DataGridViewMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridViewMain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_swimmer,
-            this.nameDataGridViewTextBoxColumn,
-            this.surnameDataGridViewTextBoxColumn,
-            this.familynameDataGridViewTextBoxColumn,
-            this.dateofbirthDataGridViewTextBoxColumn,
-            this.categoryDataGridViewTextBoxColumn});
-            this.DataGridViewMain.DataSource = this.swimmersBindingSource;
+            this.Id_swimmer,
+            this.Name_swimmer,
+            this.Surname_swimmer,
+            this.Familyname_swimmer,
+            this.Date_of_birth_swimmer,
+            this.Category_swimmer});
             this.DataGridViewMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridViewMain.Location = new System.Drawing.Point(3, 3);
             this.DataGridViewMain.Margin = new System.Windows.Forms.Padding(5);
@@ -149,30 +178,55 @@
             this.DataGridViewMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridViewMain.Size = new System.Drawing.Size(868, 350);
             this.DataGridViewMain.TabIndex = 4;
-            this.DataGridViewMain.AllowUserToAddRowsChanged += new System.EventHandler(this.MainForm_Activated);
+            this.DataGridViewMain.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewMain_CellEndEdit);
             // 
-            // ID_swimmer
+            // Id_swimmer
             // 
-            this.ID_swimmer.DataPropertyName = "ID_swimmer";
-            this.ID_swimmer.HeaderText = "ID";
-            this.ID_swimmer.MinimumWidth = 6;
-            this.ID_swimmer.Name = "ID_swimmer";
-            this.ID_swimmer.ReadOnly = true;
-            this.ID_swimmer.Width = 125;
+            this.Id_swimmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Id_swimmer.HeaderText = "ID";
+            this.Id_swimmer.Name = "Id_swimmer";
+            this.Id_swimmer.ReadOnly = true;
             // 
-            // swimmersBindingSource
+            // Name_swimmer
             // 
-            this.swimmersBindingSource.DataMember = "Swimmers";
-            this.swimmersBindingSource.DataSource = this.poolBDDataSetLocal;
+            this.Name_swimmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Name_swimmer.HeaderText = "Имя";
+            this.Name_swimmer.Name = "Name_swimmer";
+            this.Name_swimmer.ReadOnly = true;
             // 
-            // poolBDDataSetLocal
+            // Surname_swimmer
             // 
-            this.poolBDDataSetLocal.DataSetName = "PoolBDDataSetLocal";
-            this.poolBDDataSetLocal.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.Surname_swimmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Surname_swimmer.HeaderText = "Фамилия";
+            this.Surname_swimmer.Name = "Surname_swimmer";
+            this.Surname_swimmer.ReadOnly = true;
+            // 
+            // Familyname_swimmer
+            // 
+            this.Familyname_swimmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Familyname_swimmer.HeaderText = "Отчество";
+            this.Familyname_swimmer.Name = "Familyname_swimmer";
+            this.Familyname_swimmer.ReadOnly = true;
+            // 
+            // Date_of_birth_swimmer
+            // 
+            this.Date_of_birth_swimmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Date_of_birth_swimmer.HeaderText = "Дата рождения";
+            this.Date_of_birth_swimmer.Name = "Date_of_birth_swimmer";
+            this.Date_of_birth_swimmer.ReadOnly = true;
+            // 
+            // Category_swimmer
+            // 
+            this.Category_swimmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Category_swimmer.HeaderText = "Категория";
+            this.Category_swimmer.Name = "Category_swimmer";
+            this.Category_swimmer.ReadOnly = true;
             // 
             // PagePanelListSwimmers
             // 
-            this.PagePanelListSwimmers.BackColor = System.Drawing.Color.White;
+            this.PagePanelListSwimmers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(255)))));
+            this.PagePanelListSwimmers.Controls.Add(this.MainSearchLabel);
+            this.PagePanelListSwimmers.Controls.Add(this.MainTextBoxSearch);
             this.PagePanelListSwimmers.Controls.Add(this.CompetitionJoinButton);
             this.PagePanelListSwimmers.Controls.Add(this.ChangeButton);
             this.PagePanelListSwimmers.Controls.Add(this.DeleteButton);
@@ -184,11 +238,29 @@
             this.PagePanelListSwimmers.Size = new System.Drawing.Size(868, 70);
             this.PagePanelListSwimmers.TabIndex = 0;
             // 
+            // MainSearchLabel
+            // 
+            this.MainSearchLabel.AutoSize = true;
+            this.MainSearchLabel.Location = new System.Drawing.Point(307, 4);
+            this.MainSearchLabel.Name = "MainSearchLabel";
+            this.MainSearchLabel.Size = new System.Drawing.Size(45, 16);
+            this.MainSearchLabel.TabIndex = 6;
+            this.MainSearchLabel.Text = "Поиск";
+            // 
+            // MainTextBoxSearch
+            // 
+            this.MainTextBoxSearch.BackColor = System.Drawing.Color.White;
+            this.MainTextBoxSearch.Location = new System.Drawing.Point(306, 25);
+            this.MainTextBoxSearch.Name = "MainTextBoxSearch";
+            this.MainTextBoxSearch.Size = new System.Drawing.Size(205, 23);
+            this.MainTextBoxSearch.TabIndex = 5;
+            this.MainTextBoxSearch.TextChanged += new System.EventHandler(this.MainTextBoxSearch_TextChanged);
+            // 
             // CompetitionJoinButton
             // 
-            this.CompetitionJoinButton.BackColor = System.Drawing.Color.Silver;
+            this.CompetitionJoinButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.CompetitionJoinButton.BackgroundImage = global::Pool.Properties.Resources.бассейнцвет;
             this.CompetitionJoinButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.CompetitionJoinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CompetitionJoinButton.Location = new System.Drawing.Point(698, 0);
             this.CompetitionJoinButton.MaximumSize = new System.Drawing.Size(170, 70);
             this.CompetitionJoinButton.MinimumSize = new System.Drawing.Size(170, 70);
@@ -203,9 +275,9 @@
             // 
             this.ChangeButton.AutoSize = true;
             this.ChangeButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ChangeButton.BackColor = System.Drawing.Color.Silver;
+            this.ChangeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ChangeButton.BackgroundImage = global::Pool.Properties.Resources.бассейнцвет;
             this.ChangeButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ChangeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ChangeButton.Location = new System.Drawing.Point(200, 0);
             this.ChangeButton.MaximumSize = new System.Drawing.Size(100, 70);
             this.ChangeButton.MinimumSize = new System.Drawing.Size(100, 70);
@@ -219,9 +291,9 @@
             // DeleteButton
             // 
             this.DeleteButton.AutoSize = true;
-            this.DeleteButton.BackColor = System.Drawing.Color.Silver;
+            this.DeleteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.DeleteButton.BackgroundImage = global::Pool.Properties.Resources.бассейнцвет;
             this.DeleteButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteButton.Location = new System.Drawing.Point(100, 0);
             this.DeleteButton.MaximumSize = new System.Drawing.Size(100, 70);
             this.DeleteButton.MinimumSize = new System.Drawing.Size(100, 70);
@@ -235,9 +307,9 @@
             // JoinButton
             // 
             this.JoinButton.AutoSize = true;
-            this.JoinButton.BackColor = System.Drawing.Color.Silver;
+            this.JoinButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.JoinButton.BackgroundImage = global::Pool.Properties.Resources.бассейнцвет;
             this.JoinButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.JoinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.JoinButton.Location = new System.Drawing.Point(0, 0);
             this.JoinButton.MaximumSize = new System.Drawing.Size(100, 70);
             this.JoinButton.MinimumSize = new System.Drawing.Size(100, 70);
@@ -267,7 +339,11 @@
             this.CompetitionDataGridView.AllowUserToAddRows = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.CompetitionDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.CompetitionDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.CompetitionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CompetitionDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdCompetition,
@@ -376,11 +452,13 @@
             // 
             // PanelCompetition
             // 
-            this.PanelCompetition.BackColor = System.Drawing.Color.White;
+            this.PanelCompetition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(255)))));
+            this.PanelCompetition.Controls.Add(this.SaveToFile);
+            this.PanelCompetition.Controls.Add(this.ClearButton);
             this.PanelCompetition.Controls.Add(this.StyleLabel);
             this.PanelCompetition.Controls.Add(this.DistanceLabel);
-            this.PanelCompetition.Controls.Add(this.comboBoxDistance);
-            this.PanelCompetition.Controls.Add(this.comboBoxStyle);
+            this.PanelCompetition.Controls.Add(this.ComboBoxDistance);
+            this.PanelCompetition.Controls.Add(this.ComboBoxStyle);
             this.PanelCompetition.Controls.Add(this.StartButton);
             this.PanelCompetition.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelCompetition.Location = new System.Drawing.Point(0, 354);
@@ -388,10 +466,43 @@
             this.PanelCompetition.Size = new System.Drawing.Size(872, 70);
             this.PanelCompetition.TabIndex = 0;
             // 
+            // SaveToFile
+            // 
+            this.SaveToFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.SaveToFile.BackgroundImage = global::Pool.Properties.Resources.бассейнцвет;
+            this.SaveToFile.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SaveToFile.Enabled = false;
+            this.SaveToFile.Location = new System.Drawing.Point(0, 0);
+            this.SaveToFile.MaximumSize = new System.Drawing.Size(89, 70);
+            this.SaveToFile.MinimumSize = new System.Drawing.Size(89, 70);
+            this.SaveToFile.Name = "SaveToFile";
+            this.SaveToFile.Size = new System.Drawing.Size(89, 70);
+            this.SaveToFile.TabIndex = 7;
+            this.SaveToFile.Text = "Сохранить в файл";
+            this.SaveToFile.UseVisualStyleBackColor = false;
+            this.SaveToFile.Visible = false;
+            this.SaveToFile.Click += new System.EventHandler(this.SaveToFile_Click);
+            // 
+            // ClearButton
+            // 
+            this.ClearButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ClearButton.BackgroundImage = global::Pool.Properties.Resources.бассейнцвет;
+            this.ClearButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ClearButton.Location = new System.Drawing.Point(722, 0);
+            this.ClearButton.MaximumSize = new System.Drawing.Size(75, 70);
+            this.ClearButton.MinimumSize = new System.Drawing.Size(75, 70);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(75, 70);
+            this.ClearButton.TabIndex = 6;
+            this.ClearButton.Text = "Очистить";
+            this.ClearButton.UseVisualStyleBackColor = false;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
+            // 
             // StyleLabel
             // 
+            this.StyleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.StyleLabel.AutoSize = true;
-            this.StyleLabel.Location = new System.Drawing.Point(554, 6);
+            this.StyleLabel.Location = new System.Drawing.Point(479, 6);
             this.StyleLabel.Name = "StyleLabel";
             this.StyleLabel.Size = new System.Drawing.Size(42, 16);
             this.StyleLabel.TabIndex = 5;
@@ -399,49 +510,52 @@
             // 
             // DistanceLabel
             // 
+            this.DistanceLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DistanceLabel.AutoSize = true;
-            this.DistanceLabel.Location = new System.Drawing.Point(314, 6);
+            this.DistanceLabel.Location = new System.Drawing.Point(239, 6);
             this.DistanceLabel.Name = "DistanceLabel";
             this.DistanceLabel.Size = new System.Drawing.Size(70, 16);
             this.DistanceLabel.TabIndex = 4;
             this.DistanceLabel.Text = "Дистанция";
             // 
-            // comboBoxDistance
+            // ComboBoxDistance
             // 
-            this.comboBoxDistance.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxDistance.Enabled = false;
-            this.comboBoxDistance.FormattingEnabled = true;
-            this.comboBoxDistance.Items.AddRange(new object[] {
+            this.ComboBoxDistance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxDistance.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxDistance.Enabled = false;
+            this.ComboBoxDistance.FormattingEnabled = true;
+            this.ComboBoxDistance.Items.AddRange(new object[] {
             "50",
             "100"});
-            this.comboBoxDistance.Location = new System.Drawing.Point(317, 25);
-            this.comboBoxDistance.Name = "comboBoxDistance";
-            this.comboBoxDistance.Size = new System.Drawing.Size(234, 23);
-            this.comboBoxDistance.TabIndex = 3;
-            this.comboBoxDistance.TextChanged += new System.EventHandler(this.comboBoxDisctance_TextChanged);
+            this.ComboBoxDistance.Location = new System.Drawing.Point(242, 25);
+            this.ComboBoxDistance.Name = "ComboBoxDistance";
+            this.ComboBoxDistance.Size = new System.Drawing.Size(234, 23);
+            this.ComboBoxDistance.TabIndex = 3;
+            this.ComboBoxDistance.TextChanged += new System.EventHandler(this.ComboBoxDisctance_TextChanged);
             // 
-            // comboBoxStyle
+            // ComboBoxStyle
             // 
-            this.comboBoxStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxStyle.Enabled = false;
-            this.comboBoxStyle.FormattingEnabled = true;
-            this.comboBoxStyle.Items.AddRange(new object[] {
+            this.ComboBoxStyle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxStyle.Enabled = false;
+            this.ComboBoxStyle.FormattingEnabled = true;
+            this.ComboBoxStyle.Items.AddRange(new object[] {
             "Баттерфляй ",
             "Брасс",
             "Кроль(вольный стиль)",
             "Кроль(плавание на спине)"});
-            this.comboBoxStyle.Location = new System.Drawing.Point(557, 25);
-            this.comboBoxStyle.Name = "comboBoxStyle";
-            this.comboBoxStyle.Size = new System.Drawing.Size(234, 23);
-            this.comboBoxStyle.TabIndex = 2;
-            this.comboBoxStyle.TextChanged += new System.EventHandler(this.comboBoxStyle_TextChanged);
+            this.ComboBoxStyle.Location = new System.Drawing.Point(482, 25);
+            this.ComboBoxStyle.Name = "ComboBoxStyle";
+            this.ComboBoxStyle.Size = new System.Drawing.Size(234, 23);
+            this.ComboBoxStyle.TabIndex = 2;
+            this.ComboBoxStyle.TextChanged += new System.EventHandler(this.ComboBoxStyle_TextChanged);
             // 
             // StartButton
             // 
-            this.StartButton.BackColor = System.Drawing.Color.Silver;
+            this.StartButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.StartButton.BackgroundImage = global::Pool.Properties.Resources.бассейнцвет;
             this.StartButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.StartButton.Enabled = false;
-            this.StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StartButton.Location = new System.Drawing.Point(797, 0);
             this.StartButton.MaximumSize = new System.Drawing.Size(75, 70);
             this.StartButton.MinimumSize = new System.Drawing.Size(75, 70);
@@ -452,59 +566,190 @@
             this.StartButton.UseVisualStyleBackColor = false;
             this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
+            // Page3
+            // 
+            this.Page3.Controls.Add(this.SearchPanel);
+            this.Page3.Controls.Add(this.ResultDataGridView);
+            this.Page3.Location = new System.Drawing.Point(4, 29);
+            this.Page3.Name = "Page3";
+            this.Page3.Padding = new System.Windows.Forms.Padding(3);
+            this.Page3.Size = new System.Drawing.Size(876, 428);
+            this.Page3.TabIndex = 2;
+            this.Page3.Text = "Поиск результата";
+            this.Page3.UseVisualStyleBackColor = true;
+            // 
+            // SearchPanel
+            // 
+            this.SearchPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(255)))));
+            this.SearchPanel.Controls.Add(this.SearchButton);
+            this.SearchPanel.Controls.Add(this.SearchFamilynameLabel);
+            this.SearchPanel.Controls.Add(this.SearchSurnameLabel);
+            this.SearchPanel.Controls.Add(this.SearchNameLabel);
+            this.SearchPanel.Controls.Add(this.SearchTextBoxFamilyname);
+            this.SearchPanel.Controls.Add(this.SearchTextBoxSurname);
+            this.SearchPanel.Controls.Add(this.SearchTextBoxName);
+            this.SearchPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.SearchPanel.Location = new System.Drawing.Point(3, 367);
+            this.SearchPanel.Name = "SearchPanel";
+            this.SearchPanel.Size = new System.Drawing.Size(870, 58);
+            this.SearchPanel.TabIndex = 4;
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.SearchButton.BackgroundImage = global::Pool.Properties.Resources.бассейнцвет;
+            this.SearchButton.Location = new System.Drawing.Point(621, 26);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(95, 23);
+            this.SearchButton.TabIndex = 6;
+            this.SearchButton.Text = "Поиск";
+            this.SearchButton.UseVisualStyleBackColor = false;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            // 
+            // SearchFamilynameLabel
+            // 
+            this.SearchFamilynameLabel.AutoSize = true;
+            this.SearchFamilynameLabel.Location = new System.Drawing.Point(415, 10);
+            this.SearchFamilynameLabel.Name = "SearchFamilynameLabel";
+            this.SearchFamilynameLabel.Size = new System.Drawing.Size(62, 16);
+            this.SearchFamilynameLabel.TabIndex = 5;
+            this.SearchFamilynameLabel.Text = "Отчество";
+            // 
+            // SearchSurnameLabel
+            // 
+            this.SearchSurnameLabel.AutoSize = true;
+            this.SearchSurnameLabel.Location = new System.Drawing.Point(212, 10);
+            this.SearchSurnameLabel.Name = "SearchSurnameLabel";
+            this.SearchSurnameLabel.Size = new System.Drawing.Size(61, 16);
+            this.SearchSurnameLabel.TabIndex = 4;
+            this.SearchSurnameLabel.Text = "Фамилия";
+            // 
+            // SearchNameLabel
+            // 
+            this.SearchNameLabel.AutoSize = true;
+            this.SearchNameLabel.Location = new System.Drawing.Point(12, 10);
+            this.SearchNameLabel.Name = "SearchNameLabel";
+            this.SearchNameLabel.Size = new System.Drawing.Size(32, 16);
+            this.SearchNameLabel.TabIndex = 3;
+            this.SearchNameLabel.Text = "Имя";
+            // 
+            // SearchTextBoxFamilyname
+            // 
+            this.SearchTextBoxFamilyname.Location = new System.Drawing.Point(418, 26);
+            this.SearchTextBoxFamilyname.Name = "SearchTextBoxFamilyname";
+            this.SearchTextBoxFamilyname.Size = new System.Drawing.Size(197, 23);
+            this.SearchTextBoxFamilyname.TabIndex = 2;
+            // 
+            // SearchTextBoxSurname
+            // 
+            this.SearchTextBoxSurname.Location = new System.Drawing.Point(215, 26);
+            this.SearchTextBoxSurname.Name = "SearchTextBoxSurname";
+            this.SearchTextBoxSurname.Size = new System.Drawing.Size(197, 23);
+            this.SearchTextBoxSurname.TabIndex = 1;
+            // 
+            // SearchTextBoxName
+            // 
+            this.SearchTextBoxName.Location = new System.Drawing.Point(12, 26);
+            this.SearchTextBoxName.Name = "SearchTextBoxName";
+            this.SearchTextBoxName.Size = new System.Drawing.Size(197, 23);
+            this.SearchTextBoxName.TabIndex = 0;
+            // 
+            // ResultDataGridView
+            // 
+            this.ResultDataGridView.AllowUserToAddRows = false;
+            this.ResultDataGridView.AllowUserToResizeColumns = false;
+            this.ResultDataGridView.AllowUserToResizeRows = false;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.ResultDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.ResultDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.ResultDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ResultDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NameResult,
+            this.SurnameResult,
+            this.FamilynameResult,
+            this.TimeResult,
+            this.DistanceResult,
+            this.StyleResult,
+            this.DateResult});
+            this.ResultDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ResultDataGridView.Location = new System.Drawing.Point(3, 3);
+            this.ResultDataGridView.MultiSelect = false;
+            this.ResultDataGridView.Name = "ResultDataGridView";
+            this.ResultDataGridView.ReadOnly = true;
+            this.ResultDataGridView.RowHeadersVisible = false;
+            this.ResultDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ResultDataGridView.Size = new System.Drawing.Size(870, 422);
+            this.ResultDataGridView.TabIndex = 3;
+            // 
+            // NameResult
+            // 
+            this.NameResult.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NameResult.HeaderText = "Имя";
+            this.NameResult.MaxInputLength = 20;
+            this.NameResult.Name = "NameResult";
+            this.NameResult.ReadOnly = true;
+            // 
+            // SurnameResult
+            // 
+            this.SurnameResult.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SurnameResult.HeaderText = "Фамилия";
+            this.SurnameResult.MaxInputLength = 20;
+            this.SurnameResult.Name = "SurnameResult";
+            this.SurnameResult.ReadOnly = true;
+            // 
+            // FamilynameResult
+            // 
+            this.FamilynameResult.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FamilynameResult.HeaderText = "Отчество";
+            this.FamilynameResult.MaxInputLength = 20;
+            this.FamilynameResult.Name = "FamilynameResult";
+            this.FamilynameResult.ReadOnly = true;
+            // 
+            // TimeResult
+            // 
+            this.TimeResult.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TimeResult.HeaderText = "Время";
+            this.TimeResult.MaxInputLength = 10;
+            this.TimeResult.Name = "TimeResult";
+            this.TimeResult.ReadOnly = true;
+            // 
+            // DistanceResult
+            // 
+            this.DistanceResult.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DistanceResult.HeaderText = "Дистанция";
+            this.DistanceResult.MaxInputLength = 10;
+            this.DistanceResult.Name = "DistanceResult";
+            this.DistanceResult.ReadOnly = true;
+            // 
+            // StyleResult
+            // 
+            this.StyleResult.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.StyleResult.HeaderText = "Стиль";
+            this.StyleResult.MaxInputLength = 16;
+            this.StyleResult.Name = "StyleResult";
+            this.StyleResult.ReadOnly = true;
+            // 
+            // DateResult
+            // 
+            this.DateResult.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DateResult.HeaderText = "Дата заплыва";
+            this.DateResult.MaxInputLength = 10;
+            this.DateResult.Name = "DateResult";
+            this.DateResult.ReadOnly = true;
+            // 
+            // swimmersBindingSource
+            // 
+            this.swimmersBindingSource.DataMember = "Swimmers";
+            this.swimmersBindingSource.DataSource = this.poolBDDataSet;
+            // 
+            // poolBDDataSet
+            // 
+            this.poolBDDataSet.DataSetName = "PoolBDDataSet";
+            this.poolBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // swimmersTableAdapter
             // 
             this.swimmersTableAdapter.ClearBeforeFill = true;
-            // 
-            // categoryDataGridViewTextBoxColumn
-            // 
-            this.categoryDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
-            this.categoryDataGridViewTextBoxColumn.HeaderText = "Категория";
-            this.categoryDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
-            this.categoryDataGridViewTextBoxColumn.ReadOnly = true;
-            this.categoryDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // dateofbirthDataGridViewTextBoxColumn
-            // 
-            this.dateofbirthDataGridViewTextBoxColumn.DataPropertyName = "Date_of_birth";
-            this.dateofbirthDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
-            this.dateofbirthDataGridViewTextBoxColumn.MaxInputLength = 10;
-            this.dateofbirthDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dateofbirthDataGridViewTextBoxColumn.Name = "dateofbirthDataGridViewTextBoxColumn";
-            this.dateofbirthDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateofbirthDataGridViewTextBoxColumn.Width = 145;
-            // 
-            // familynameDataGridViewTextBoxColumn
-            // 
-            this.familynameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.familynameDataGridViewTextBoxColumn.DataPropertyName = "Familyname";
-            this.familynameDataGridViewTextBoxColumn.HeaderText = "Отчество";
-            this.familynameDataGridViewTextBoxColumn.MaxInputLength = 20;
-            this.familynameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.familynameDataGridViewTextBoxColumn.Name = "familynameDataGridViewTextBoxColumn";
-            this.familynameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // surnameDataGridViewTextBoxColumn
-            // 
-            this.surnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
-            this.surnameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
-            this.surnameDataGridViewTextBoxColumn.MaxInputLength = 20;
-            this.surnameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
-            this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Имя";
-            this.nameDataGridViewTextBoxColumn.MaxInputLength = 20;
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // MainForm
             // 
@@ -524,14 +769,18 @@
             this.MainTabControl.ResumeLayout(false);
             this.Page1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.swimmersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poolBDDataSetLocal)).EndInit();
             this.PagePanelListSwimmers.ResumeLayout(false);
             this.PagePanelListSwimmers.PerformLayout();
             this.Page2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CompetitionDataGridView)).EndInit();
             this.PanelCompetition.ResumeLayout(false);
             this.PanelCompetition.PerformLayout();
+            this.Page3.ResumeLayout(false);
+            this.SearchPanel.ResumeLayout(false);
+            this.SearchPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ResultDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.swimmersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poolBDDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -549,14 +798,10 @@
         private System.Windows.Forms.Button CompetitionJoinButton;
         private System.Windows.Forms.Panel PanelCompetition;
         private System.Windows.Forms.Button StartButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_swimmer;
-        public System.Windows.Forms.BindingSource swimmersBindingSource;
-        public PoolBDDataSetLocal poolBDDataSetLocal;
-        public PoolBDDataSetLocalTableAdapters.SwimmersTableAdapter swimmersTableAdapter;
-        private System.Windows.Forms.ComboBox comboBoxStyle;
+        private System.Windows.Forms.ComboBox ComboBoxStyle;
         private System.Windows.Forms.Label StyleLabel;
         private System.Windows.Forms.Label DistanceLabel;
-        private System.Windows.Forms.ComboBox comboBoxDistance;
+        private System.Windows.Forms.ComboBox ComboBoxDistance;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCompetition;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameNameCompetition;
         private System.Windows.Forms.DataGridViewTextBoxColumn SurnameCompetition;
@@ -566,11 +811,36 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Style;
         private System.Windows.Forms.DataGridViewTextBoxColumn Distance;
         private System.Windows.Forms.DataGridViewTextBoxColumn Time;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn familynameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateofbirthDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button ClearButton;
+        private System.Windows.Forms.Button SaveToFile;
+        private PoolBDDataSet poolBDDataSet;
+        private System.Windows.Forms.BindingSource swimmersBindingSource;
+        private PoolBDDataSetTableAdapters.SwimmersTableAdapter swimmersTableAdapter;
+        private System.Windows.Forms.TabPage Page3;
+        private System.Windows.Forms.Panel SearchPanel;
+        private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.Label SearchFamilynameLabel;
+        private System.Windows.Forms.Label SearchSurnameLabel;
+        private System.Windows.Forms.Label SearchNameLabel;
+        private System.Windows.Forms.TextBox SearchTextBoxFamilyname;
+        private System.Windows.Forms.TextBox SearchTextBoxSurname;
+        private System.Windows.Forms.TextBox SearchTextBoxName;
+        private System.Windows.Forms.DataGridView ResultDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameResult;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SurnameResult;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FamilynameResult;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeResult;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DistanceResult;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StyleResult;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateResult;
+        private System.Windows.Forms.TextBox MainTextBoxSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_swimmer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name_swimmer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Surname_swimmer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Familyname_swimmer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date_of_birth_swimmer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Category_swimmer;
+        private System.Windows.Forms.Label MainSearchLabel;
     }
 }
 

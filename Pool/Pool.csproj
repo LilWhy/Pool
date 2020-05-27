@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{43B873A7-834E-436C-A86E-3CC33E45AD98}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>Pool</RootNamespace>
     <AssemblyName>Pool</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -47,6 +47,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -85,10 +88,10 @@
     <Compile Include="Forms\UpdateForm.Designer.cs">
       <DependentUpon>UpdateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PoolBDDataSetLocal.Designer.cs">
+    <Compile Include="PoolBDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PoolBDDataSetLocal.xsd</DependentUpon>
+      <DependentUpon>PoolBDDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,17 +115,18 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="PoolBDDataSetLocal.xsc">
-      <DependentUpon>PoolBDDataSetLocal.xsd</DependentUpon>
+    <None Include="PoolBDDataSet.xsc">
+      <DependentUpon>PoolBDDataSet.xsd</DependentUpon>
     </None>
-    <None Include="PoolBDDataSetLocal.xsd">
+    <None Include="PoolBDDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PoolBDDataSetLocal.Designer.cs</LastGenOutput>
+      <LastGenOutput>PoolBDDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="PoolBDDataSetLocal.xss">
-      <DependentUpon>PoolBDDataSetLocal.xsd</DependentUpon>
+    <None Include="PoolBDDataSet.xss">
+      <DependentUpon>PoolBDDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\DataSources\MainForm.datasource" />
     <None Include="Properties\Settings.settings">
@@ -158,6 +162,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>PoolBD.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Море.jpg" />
+    <None Include="Resources\бассейнцвет.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

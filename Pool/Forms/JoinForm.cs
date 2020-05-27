@@ -14,7 +14,7 @@ namespace Pool.Forms
             CategoryComboBox.SelectedIndex = 0;
         }
 
-        private async static void AddUser(string name, string Surname, string Familyname, string Date,string Category)
+        private async static void AddUser(string name, string Surname, string Familyname, DateTime Date,string Category)
         {
             // Name procedure
             string sqlExpression = "Add_Swimmer";
@@ -73,7 +73,6 @@ namespace Pool.Forms
 
         private void JoinButtonAccept_Click(object sender, System.EventArgs e)
         {
-            string DateofBirth = dateTimePickerDateOfBirth.Value.ToString();
             if (NameTextBox.Text == "" || SurnameTextBox.Text == "" || FamilyNameTextBox.Text == "")
             {
                 MessageBox.Show(
@@ -86,8 +85,7 @@ namespace Pool.Forms
             }
             else
             {
-                
-                AddUser(NameTextBox.Text, SurnameTextBox.Text, FamilyNameTextBox.Text, DateofBirth,CategoryComboBox.SelectedItem.ToString());
+                AddUser(NameTextBox.Text, SurnameTextBox.Text, FamilyNameTextBox.Text, dateTimePickerDateOfBirth.Value, CategoryComboBox.SelectedItem.ToString());
                 Close();
             }
         }
