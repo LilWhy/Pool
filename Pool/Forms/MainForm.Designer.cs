@@ -38,12 +38,6 @@
             this.MainTabControl = new System.Windows.Forms.TabControl();
             this.Page1 = new System.Windows.Forms.TabPage();
             this.DataGridViewMain = new System.Windows.Forms.DataGridView();
-            this.Id_swimmer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name_swimmer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Surname_swimmer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Familyname_swimmer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date_of_birth_swimmer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Category_swimmer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PagePanelListSwimmers = new System.Windows.Forms.Panel();
             this.MainSearchLabel = new System.Windows.Forms.Label();
             this.MainTextBoxSearch = new System.Windows.Forms.TextBox();
@@ -90,6 +84,12 @@
             this.swimmersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.poolBDDataSet = new Pool.PoolBDDataSet();
             this.swimmersTableAdapter = new Pool.PoolBDDataSetTableAdapters.SwimmersTableAdapter();
+            this.Id_swimmer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name_swimmer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Surname_swimmer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Familyname_swimmer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date_of_birth_swimmer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category_swimmer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MainTabControl.SuspendLayout();
             this.Page1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewMain)).BeginInit();
@@ -180,48 +180,6 @@
             this.DataGridViewMain.TabIndex = 4;
             this.DataGridViewMain.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewMain_CellEndEdit);
             // 
-            // Id_swimmer
-            // 
-            this.Id_swimmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Id_swimmer.HeaderText = "ID";
-            this.Id_swimmer.Name = "Id_swimmer";
-            this.Id_swimmer.ReadOnly = true;
-            // 
-            // Name_swimmer
-            // 
-            this.Name_swimmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Name_swimmer.HeaderText = "Имя";
-            this.Name_swimmer.Name = "Name_swimmer";
-            this.Name_swimmer.ReadOnly = true;
-            // 
-            // Surname_swimmer
-            // 
-            this.Surname_swimmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Surname_swimmer.HeaderText = "Фамилия";
-            this.Surname_swimmer.Name = "Surname_swimmer";
-            this.Surname_swimmer.ReadOnly = true;
-            // 
-            // Familyname_swimmer
-            // 
-            this.Familyname_swimmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Familyname_swimmer.HeaderText = "Отчество";
-            this.Familyname_swimmer.Name = "Familyname_swimmer";
-            this.Familyname_swimmer.ReadOnly = true;
-            // 
-            // Date_of_birth_swimmer
-            // 
-            this.Date_of_birth_swimmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Date_of_birth_swimmer.HeaderText = "Дата рождения";
-            this.Date_of_birth_swimmer.Name = "Date_of_birth_swimmer";
-            this.Date_of_birth_swimmer.ReadOnly = true;
-            // 
-            // Category_swimmer
-            // 
-            this.Category_swimmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Category_swimmer.HeaderText = "Категория";
-            this.Category_swimmer.Name = "Category_swimmer";
-            this.Category_swimmer.ReadOnly = true;
-            // 
             // PagePanelListSwimmers
             // 
             this.PagePanelListSwimmers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(255)))));
@@ -241,9 +199,10 @@
             // MainSearchLabel
             // 
             this.MainSearchLabel.AutoSize = true;
+            this.MainSearchLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MainSearchLabel.Location = new System.Drawing.Point(307, 4);
             this.MainSearchLabel.Name = "MainSearchLabel";
-            this.MainSearchLabel.Size = new System.Drawing.Size(45, 16);
+            this.MainSearchLabel.Size = new System.Drawing.Size(42, 15);
             this.MainSearchLabel.TabIndex = 6;
             this.MainSearchLabel.Text = "Поиск";
             // 
@@ -261,6 +220,7 @@
             this.CompetitionJoinButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.CompetitionJoinButton.BackgroundImage = global::Pool.Properties.Resources.бассейнцвет;
             this.CompetitionJoinButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.CompetitionJoinButton.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CompetitionJoinButton.Location = new System.Drawing.Point(698, 0);
             this.CompetitionJoinButton.MaximumSize = new System.Drawing.Size(170, 70);
             this.CompetitionJoinButton.MinimumSize = new System.Drawing.Size(170, 70);
@@ -278,6 +238,7 @@
             this.ChangeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ChangeButton.BackgroundImage = global::Pool.Properties.Resources.бассейнцвет;
             this.ChangeButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ChangeButton.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ChangeButton.Location = new System.Drawing.Point(200, 0);
             this.ChangeButton.MaximumSize = new System.Drawing.Size(100, 70);
             this.ChangeButton.MinimumSize = new System.Drawing.Size(100, 70);
@@ -294,6 +255,7 @@
             this.DeleteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.DeleteButton.BackgroundImage = global::Pool.Properties.Resources.бассейнцвет;
             this.DeleteButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.DeleteButton.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DeleteButton.Location = new System.Drawing.Point(100, 0);
             this.DeleteButton.MaximumSize = new System.Drawing.Size(100, 70);
             this.DeleteButton.MinimumSize = new System.Drawing.Size(100, 70);
@@ -310,6 +272,7 @@
             this.JoinButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.JoinButton.BackgroundImage = global::Pool.Properties.Resources.бассейнцвет;
             this.JoinButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.JoinButton.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.JoinButton.Location = new System.Drawing.Point(0, 0);
             this.JoinButton.MaximumSize = new System.Drawing.Size(100, 70);
             this.JoinButton.MinimumSize = new System.Drawing.Size(100, 70);
@@ -472,6 +435,7 @@
             this.SaveToFile.BackgroundImage = global::Pool.Properties.Resources.бассейнцвет;
             this.SaveToFile.Dock = System.Windows.Forms.DockStyle.Left;
             this.SaveToFile.Enabled = false;
+            this.SaveToFile.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SaveToFile.Location = new System.Drawing.Point(0, 0);
             this.SaveToFile.MaximumSize = new System.Drawing.Size(89, 70);
             this.SaveToFile.MinimumSize = new System.Drawing.Size(89, 70);
@@ -488,6 +452,7 @@
             this.ClearButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClearButton.BackgroundImage = global::Pool.Properties.Resources.бассейнцвет;
             this.ClearButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ClearButton.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ClearButton.Location = new System.Drawing.Point(722, 0);
             this.ClearButton.MaximumSize = new System.Drawing.Size(75, 70);
             this.ClearButton.MinimumSize = new System.Drawing.Size(75, 70);
@@ -502,9 +467,10 @@
             // 
             this.StyleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.StyleLabel.AutoSize = true;
+            this.StyleLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.StyleLabel.Location = new System.Drawing.Point(479, 6);
             this.StyleLabel.Name = "StyleLabel";
-            this.StyleLabel.Size = new System.Drawing.Size(42, 16);
+            this.StyleLabel.Size = new System.Drawing.Size(43, 15);
             this.StyleLabel.TabIndex = 5;
             this.StyleLabel.Text = "Стиль";
             // 
@@ -512,9 +478,10 @@
             // 
             this.DistanceLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DistanceLabel.AutoSize = true;
+            this.DistanceLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DistanceLabel.Location = new System.Drawing.Point(239, 6);
             this.DistanceLabel.Name = "DistanceLabel";
-            this.DistanceLabel.Size = new System.Drawing.Size(70, 16);
+            this.DistanceLabel.Size = new System.Drawing.Size(69, 15);
             this.DistanceLabel.TabIndex = 4;
             this.DistanceLabel.Text = "Дистанция";
             // 
@@ -556,6 +523,7 @@
             this.StartButton.BackgroundImage = global::Pool.Properties.Resources.бассейнцвет;
             this.StartButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.StartButton.Enabled = false;
+            this.StartButton.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.StartButton.Location = new System.Drawing.Point(797, 0);
             this.StartButton.MaximumSize = new System.Drawing.Size(75, 70);
             this.StartButton.MinimumSize = new System.Drawing.Size(75, 70);
@@ -598,6 +566,7 @@
             // 
             this.SearchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.SearchButton.BackgroundImage = global::Pool.Properties.Resources.бассейнцвет;
+            this.SearchButton.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SearchButton.Location = new System.Drawing.Point(621, 26);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(95, 23);
@@ -609,27 +578,30 @@
             // SearchFamilynameLabel
             // 
             this.SearchFamilynameLabel.AutoSize = true;
+            this.SearchFamilynameLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SearchFamilynameLabel.Location = new System.Drawing.Point(415, 10);
             this.SearchFamilynameLabel.Name = "SearchFamilynameLabel";
-            this.SearchFamilynameLabel.Size = new System.Drawing.Size(62, 16);
+            this.SearchFamilynameLabel.Size = new System.Drawing.Size(61, 15);
             this.SearchFamilynameLabel.TabIndex = 5;
             this.SearchFamilynameLabel.Text = "Отчество";
             // 
             // SearchSurnameLabel
             // 
             this.SearchSurnameLabel.AutoSize = true;
+            this.SearchSurnameLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SearchSurnameLabel.Location = new System.Drawing.Point(212, 10);
             this.SearchSurnameLabel.Name = "SearchSurnameLabel";
-            this.SearchSurnameLabel.Size = new System.Drawing.Size(61, 16);
+            this.SearchSurnameLabel.Size = new System.Drawing.Size(62, 15);
             this.SearchSurnameLabel.TabIndex = 4;
             this.SearchSurnameLabel.Text = "Фамилия";
             // 
             // SearchNameLabel
             // 
             this.SearchNameLabel.AutoSize = true;
+            this.SearchNameLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SearchNameLabel.Location = new System.Drawing.Point(12, 10);
             this.SearchNameLabel.Name = "SearchNameLabel";
-            this.SearchNameLabel.Size = new System.Drawing.Size(32, 16);
+            this.SearchNameLabel.Size = new System.Drawing.Size(32, 15);
             this.SearchNameLabel.TabIndex = 3;
             this.SearchNameLabel.Text = "Имя";
             // 
@@ -751,6 +723,49 @@
             // 
             this.swimmersTableAdapter.ClearBeforeFill = true;
             // 
+            // Id_swimmer
+            // 
+            this.Id_swimmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Id_swimmer.HeaderText = "ID";
+            this.Id_swimmer.Name = "Id_swimmer";
+            this.Id_swimmer.ReadOnly = true;
+            // 
+            // Name_swimmer
+            // 
+            this.Name_swimmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Name_swimmer.HeaderText = "Имя";
+            this.Name_swimmer.Name = "Name_swimmer";
+            this.Name_swimmer.ReadOnly = true;
+            // 
+            // Surname_swimmer
+            // 
+            this.Surname_swimmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Surname_swimmer.HeaderText = "Фамилия";
+            this.Surname_swimmer.Name = "Surname_swimmer";
+            this.Surname_swimmer.ReadOnly = true;
+            // 
+            // Familyname_swimmer
+            // 
+            this.Familyname_swimmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Familyname_swimmer.HeaderText = "Отчество";
+            this.Familyname_swimmer.Name = "Familyname_swimmer";
+            this.Familyname_swimmer.ReadOnly = true;
+            // 
+            // Date_of_birth_swimmer
+            // 
+            this.Date_of_birth_swimmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Date_of_birth_swimmer.HeaderText = "Дата рождения";
+            this.Date_of_birth_swimmer.MaxInputLength = 10;
+            this.Date_of_birth_swimmer.Name = "Date_of_birth_swimmer";
+            this.Date_of_birth_swimmer.ReadOnly = true;
+            // 
+            // Category_swimmer
+            // 
+            this.Category_swimmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Category_swimmer.HeaderText = "Категория";
+            this.Category_swimmer.Name = "Category_swimmer";
+            this.Category_swimmer.ReadOnly = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -834,13 +849,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StyleResult;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateResult;
         private System.Windows.Forms.TextBox MainTextBoxSearch;
+        private System.Windows.Forms.Label MainSearchLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_swimmer;
         private System.Windows.Forms.DataGridViewTextBoxColumn Name_swimmer;
         private System.Windows.Forms.DataGridViewTextBoxColumn Surname_swimmer;
         private System.Windows.Forms.DataGridViewTextBoxColumn Familyname_swimmer;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date_of_birth_swimmer;
         private System.Windows.Forms.DataGridViewTextBoxColumn Category_swimmer;
-        private System.Windows.Forms.Label MainSearchLabel;
     }
 }
 
